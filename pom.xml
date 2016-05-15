@@ -9,8 +9,17 @@
     <name>Wix Restaurants JSON-over-HTTP client</name>
     <description>Wix Restaurants JSON-over-HTTP client</description>
 	<url>https://github.com/wix/wix-restaurants-jsonclient</url>
-	
-    <developers>
+
+
+	<parent>
+		<groupId>com.wix</groupId>
+		<artifactId>wix-oss-parent</artifactId>
+		<version>1.1.0</version>
+		<relativePath />
+	</parent>
+
+
+	<developers>
         <developer>
             <name>Ohad Raz</name>
             <email>ohadr@wix.com</email>
@@ -33,7 +42,14 @@
             </roles>
         </developer>
 	</developers>
-	
+
+
+	<scm>
+		<url>https://github.com/wix/wix-restaurants-jsonclient</url>
+		<connection>scm:git:git://github.com/wix/wix-restaurants-jsonclient.git</connection>
+		<developerConnection>scm:git:git@github.com:wix/wix-restaurants-jsonclient.git</developerConnection>
+	</scm>
+
 	<issueManagement>
 		<url>https://github.com/wix/wix-restaurants-jsonclient/issues</url>
 		<system>GitHub Issues</system>
@@ -46,85 +62,12 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	
-	<scm>
-		<url>https://github.com/wix/wix-restaurants-jsonclient</url>
-		<connection>scm:git:git://github.com/wix/wix-restaurants-jsonclient.git</connection>
-		<developerConnection>scm:git:git@github.com:wix/wix-restaurants-jsonclient.git</developerConnection>
-	</scm>	
-	
+
+
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
 		<com.wix.restaurants.json.version>1.4.0</com.wix.restaurants.json.version>
 		<com.google.http.version>1.20.0</com.google.http.version>
     </properties>
-	
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.4</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.5</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>			
-        </plugins>
-    </build>	
 
     <dependencies>
         <!-- Compile/runtime dependencies -->
