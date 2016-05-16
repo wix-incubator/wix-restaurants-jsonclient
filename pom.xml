@@ -67,6 +67,8 @@
     <properties>
 		<com.wix.restaurants.json.version>1.4.0</com.wix.restaurants.json.version>
 		<com.google.http.version>1.20.0</com.google.http.version>
+        <java.source.version>1.7</java.source.version>
+        <java.target.version>1.7</java.target.version>
     </properties>
 
     <dependencies>
@@ -84,4 +86,37 @@
 
         <!-- Test Dependencies -->
     </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.4.1</version>
+				<executions>
+					<execution>
+						<id>enforce-bytecode-version</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<enforceBytecodeVersion>
+									<maxJdkVersion>1.7</maxJdkVersion>
+								</enforceBytecodeVersion>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>extra-enforcer-rules</artifactId>
+						<version>1.0-beta-4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
 </project>
