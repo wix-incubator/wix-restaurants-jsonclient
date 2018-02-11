@@ -67,7 +67,7 @@
 
     <properties>
 		<com.wix.restaurants.json.version>1.6.0</com.wix.restaurants.json.version>
-		<com.google.http.version>1.21.0</com.google.http.version>
+		<com.google.http.version>1.23.0</com.google.http.version>
         <java.source.version>1.7</java.source.version>
         <java.target.version>1.7</java.target.version>
     </properties>
